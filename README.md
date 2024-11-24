@@ -13,6 +13,8 @@ where
 The same number of threads will be created as the number of philosophers each running the same eat-sleep-think routine. The forks are represented by mutexes and the whole show is being monitored by the main program.
 
 ## How to run
+_This project has been developed on Linux._
+
 `git clone` and `cd` into desired directory. Run `make` in the same directory. Run executable `./philo` with the above mentioned arguments such as:
 ```
 ./philo 2 180 60 60
