@@ -1,5 +1,5 @@
 # 42Philosophers
-A project to simulate the [Dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem). In the imaginary scenario `N` number of philosophers are sitting at the same table each having their own plate and a fork. The philosophers will eat, sleep and think in cycles, but a philosopher can eat only with two forks. The objective of this program is to keep the philosophers alive. The program can be run like this:
+A 42 school project to simulate the [Dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem). In the imaginary scenario `N` number of philosophers are sitting at the same table each having their own plate and a fork. The philosophers will eat, sleep and think in cycles, but a philosopher can eat only with two forks. The objective of this program is to keep the philosophers alive. The program can be run like this:
 ```
 ./philo N D E S M
 ```
