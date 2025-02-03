@@ -1,35 +1,41 @@
 # 42Philosophers
-A 42 school project to simulate the [Dining philosophers problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem). In the imaginary scenario `N` number of philosophers are sitting at the same table each having their own plate and a fork. The philosophers will eat, sleep and think in cycles, but a philosopher can eat only with two forks. The objective of this program is to keep the philosophers alive. The program can be run like this:
-```
-./philo N D E S M
-```
-where
-- `N` is the number of philosophers at the table
-- `D` is `time_to_die` in milliseconds (if more time than `time_to_die` has passed since a philosopher last ate, it will die)
-- `E` is `time_to_eat` in milliseconds (the time it takes for a philosopher to consume a meal)
-- `S` is `time_to_sleep` in milliseconds (the time it takes for a philosopher to sleep)
-- `M` is the minimum number of meals each philosopher has to eat before simulation stops (optional argument)
+## Description
+**Philosophers** is a project that explores the fundamentals of threading and process synchronization in C. The goal is to simulate the classic [Dining Philosophers problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem) while managing concurrent execution using threads and mutexes.
 
-The same number of threads will be created as the number of philosophers each running the same eat-sleep-think routine. The forks are represented by mutexes and the whole show is being monitored by the main program.
+## Features
+- Simulates multiple philosophers alternating between eating, sleeping, and thinking.
+- Implements threading and mutual exclusion to avoid race conditions.
+- Ensures philosophers do not starve and properly manage shared resources.
 
-## How to run
-_This project has been developed on Linux._
+## Installation
+1. Clone the repository:
+```
+git clone https://github.com/ejarvinen/42Philosophers.git
+```
+2. Navigate to the project directory:
+```
+cd 42Philosophers
+```
+3. Compile the project:
+```
+make
+```
+## Usage
+Run the program with the following syntax:
+```
+./philo number_of_philosophers time_to_die time_to_eat time_to_sleep [number_of_times_each_philosopher_must_eat]
+```
+Example:
+```
+./philo 5 800 200 200
+```
+This runs a simulation with 5 philosophers who die if they do not eat within 800ms, take 200ms to eat, and sleep for 200ms.
 
-`git clone` and `cd` into desired directory. Run `make` in the same directory. Run executable `./philo` with the above mentioned arguments such as:
-```
-./philo 2 180 60 60
-```
-> will run infinitely
-```
-./philo 10 180 60 60
-```
-> someone will die
-```
-./philo 3 250 60 60 5
-```
-> runs until all philosophers have eaten at least 5 meals
+### Output Format
+- `timestamp_in_ms X has taken a fork`
+- `timestamp_in_ms X is eating`
+- `timestamp_in_ms X is sleeping`
+- `timestamp_in_ms X is thinking`
+- `timestamp_in_ms X died`
 
-The program outputs all actions happening at the table on the terminal in the following format:
-```
-[time_stamp_in_milliseconds] [philosopher's id] [action]
-```
+Where `X` is the philosopher number.
